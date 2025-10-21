@@ -2,7 +2,11 @@
 
 All notable changes to `laravel-activity-feed` will be documented in this file.
 
-## [1.0.0] - 2025-01-21
+## [Unreleased]
+
+## [0.1.0] - 2025-01-21
+
+**Initial beta release** - Package is feature-complete and ready for testing.
 
 ### Added
 - Initial release
