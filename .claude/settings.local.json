@@ -3,7 +3,13 @@
     "allow": [
       "WebFetch(domain:github.com)",
       "Bash(tree:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(cat:*)",
+      "Bash(composer install:*)",
+      "Bash(./vendor/bin/phpunit:*)"
     ],
     "deny": [],
     "ask": []

@@ -59,6 +59,7 @@ class FeedItemBuilderTest extends TestCase
             ->occurredAt($occurredAt)
             ->log();
 
-        $this->assertTrue($feedItem->occurred_at->equalTo($occurredAt));
+        // Use diffInSeconds instead of equalTo due to timestamp precision
+        $this->assertTrue($feedItem->occurred_at->diffInSeconds($occurredAt) < 2);
     }
 }

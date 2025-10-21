@@ -19,10 +19,10 @@ class GroupedChangesTest extends TestCase
             ->withChange('status', 'pending', 'approved')
             ->log();
 
-        $this->assertTrue($feedItem->hasChanges());
-        $this->assertEquals(1, $feedItem->getChangesCount());
+        $this->assertTrue($feedItem->hasTrackedChanges());
+        $this->assertEquals(1, $feedItem->getTrackedChangesCount());
 
-        $changes = $feedItem->getChanges();
+        $changes = $feedItem->getTrackedChanges();
         $this->assertEquals('status', $changes[0]['field']);
         $this->assertEquals('pending', $changes[0]['old']);
         $this->assertEquals('approved', $changes[0]['new']);
@@ -39,8 +39,8 @@ class GroupedChangesTest extends TestCase
             ->withChange('priority', 'normal', 'high')
             ->log();
 
-        $this->assertTrue($feedItem->hasChanges());
-        $this->assertEquals(3, $feedItem->getChangesCount());
+        $this->assertTrue($feedItem->hasTrackedChanges());
+        $this->assertEquals(3, $feedItem->getTrackedChangesCount());
     }
 
     /** @test */
@@ -55,7 +55,7 @@ class GroupedChangesTest extends TestCase
             ])
             ->log();
 
-        $this->assertEquals(2, $feedItem->getChangesCount());
+        $this->assertEquals(2, $feedItem->getTrackedChangesCount());
     }
 
     /** @test */
@@ -68,12 +68,12 @@ class GroupedChangesTest extends TestCase
             ->withChange('amount', '$500', '$550')
             ->log();
 
-        $statusChange = $feedItem->getChange('status');
+        $statusChange = $feedItem->getTrackedChange('status');
         $this->assertNotNull($statusChange);
         $this->assertEquals('pending', $statusChange['old']);
         $this->assertEquals('approved', $statusChange['new']);
 
-        $this->assertNull($feedItem->getChange('nonexistent'));
+        $this->assertNull($feedItem->getTrackedChange('nonexistent'));
     }
 
     /** @test */
@@ -86,7 +86,7 @@ class GroupedChangesTest extends TestCase
             ->withChange('amount', '$500', '$550')
             ->log();
 
-        $formatted = $feedItem->formatChanges();
+        $formatted = $feedItem->formatTrackedChanges();
 
         $this->assertCount(2, $formatted);
         $this->assertEquals('Status: pending → approved', $formatted[0]);
@@ -102,7 +102,7 @@ class GroupedChangesTest extends TestCase
             ->withChange('status', 'pending', 'approved')
             ->log();
 
-        $formatted = $feedItem->formatChanges(false);
+        $formatted = $feedItem->formatTrackedChanges(false);
 
         $this->assertEquals('pending → approved', $formatted[0]);
     }
@@ -148,7 +148,7 @@ class GroupedChangesTest extends TestCase
             ->withChange('notes', null, 'New note')
             ->log();
 
-        $formatted = $feedItem->formatChanges();
+        $formatted = $feedItem->formatTrackedChanges();
         $this->assertEquals('Notes: (empty) → New note', $formatted[0]);
     }
 
@@ -161,7 +161,7 @@ class GroupedChangesTest extends TestCase
             ->withChange('is_active', false, true)
             ->log();
 
-        $formatted = $feedItem->formatChanges();
+        $formatted = $feedItem->formatTrackedChanges();
         $this->assertEquals('Is active: No → Yes', $formatted[0]);
     }
 
@@ -174,7 +174,7 @@ class GroupedChangesTest extends TestCase
             ->withChange('shipping_method', 'standard', 'express')
             ->log();
 
-        $formatted = $feedItem->formatChanges();
+        $formatted = $feedItem->formatTrackedChanges();
         $this->assertEquals('Shipping method: standard → express', $formatted[0]);
     }
 

@@ -173,35 +173,35 @@ class FeedItem extends Model
     }
 
     /**
-     * Check if this feed item has tracked changes.
+     * Check if this feed item has tracked field changes.
      */
-    public function hasChanges(): bool
+    public function hasTrackedChanges(): bool
     {
         return isset($this->properties['changes']) && is_array($this->properties['changes']);
     }
 
     /**
-     * Get the tracked changes.
+     * Get the tracked field changes.
      */
-    public function getChanges(): array
+    public function getTrackedChanges(): array
     {
         return $this->properties['changes'] ?? [];
     }
 
     /**
-     * Get the number of changes.
+     * Get the number of tracked changes.
      */
-    public function getChangesCount(): int
+    public function getTrackedChangesCount(): int
     {
-        return $this->properties['changes_count'] ?? count($this->getChanges());
+        return $this->properties['changes_count'] ?? count($this->getTrackedChanges());
     }
 
     /**
-     * Get a specific change by field name.
+     * Get a specific tracked change by field name.
      */
-    public function getChange(string $field): ?array
+    public function getTrackedChange(string $field): ?array
     {
-        $changes = $this->getChanges();
+        $changes = $this->getTrackedChanges();
         foreach ($changes as $change) {
             if ($change['field'] === $field) {
                 return $change;
@@ -211,11 +211,11 @@ class FeedItem extends Model
     }
 
     /**
-     * Format changes for display.
+     * Format tracked changes for display.
      */
-    public function formatChanges(bool $includeFieldNames = true): array
+    public function formatTrackedChanges(bool $includeFieldNames = true): array
     {
-        $changes = $this->getChanges();
+        $changes = $this->getTrackedChanges();
         $formatted = [];
 
         foreach ($changes as $change) {
@@ -263,18 +263,18 @@ class FeedItem extends Model
     }
 
     /**
-     * Get a summary of changes (e.g., "updated 3 fields").
+     * Get a summary of tracked changes (e.g., "updated 3 fields").
      */
     public function getChangesSummary(): string
     {
-        $count = $this->getChangesCount();
+        $count = $this->getTrackedChangesCount();
 
         if ($count === 0) {
             return 'no changes';
         }
 
         if ($count === 1) {
-            $changes = $this->getChanges();
+            $changes = $this->getTrackedChanges();
             $field = $this->formatFieldName($changes[0]['field']);
             return "updated {$field}";
         }
