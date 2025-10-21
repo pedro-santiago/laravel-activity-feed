@@ -23,7 +23,7 @@ A robust Laravel package for creating activity feeds with dynamic entity resolut
 Install via Composer:
 
 ```bash
-composer require yourvendor/laravel-activity-feed
+composer require pedro-santiago/laravel-activity-feed
 ```
 
 Publish the configuration and migrations:
@@ -44,7 +44,7 @@ php artisan migrate
 ### Basic Usage
 
 ```php
-use function YourVendor\ActivityFeed\feed;
+use function PedroSantiago\ActivityFeed\feed;
 
 // Log a simple activity
 feed()
@@ -106,7 +106,7 @@ See [GROUPED_CHANGES.md](GROUPED_CHANGES.md) for detailed documentation.
 Add the `HasFeed` trait to models that should have activity feeds:
 
 ```php
-use YourVendor\ActivityFeed\Traits\HasFeed;
+use PedroSantiago\ActivityFeed\Traits\HasFeed;
 
 class Order extends Model
 {
@@ -153,7 +153,7 @@ $actorItems = $user->feedItemsAsActor()->get();
 ### Filter by Entity
 
 ```php
-use YourVendor\ActivityFeed\Models\FeedItem;
+use PedroSantiago\ActivityFeed\Models\FeedItem;
 
 // Get feed for a specific order
 $feed = FeedItem::forEntity($order, 'subject')
@@ -418,7 +418,7 @@ protected function schedule(Schedule $schedule)
 ## Example: Building a User Feed
 
 ```php
-use YourVendor\ActivityFeed\Models\FeedItem;
+use PedroSantiago\ActivityFeed\Models\FeedItem;
 
 class FeedController extends Controller
 {

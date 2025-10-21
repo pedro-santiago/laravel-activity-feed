@@ -1,10 +1,10 @@
 <?php
 
-namespace YourVendor\ActivityFeed\Traits;
+namespace PedroSantiago\ActivityFeed\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use YourVendor\ActivityFeed\Builders\FeedItemBuilder;
-use YourVendor\ActivityFeed\Models\FeedItemEntity;
+use PedroSantiago\ActivityFeed\Builders\FeedItemBuilder;
+use PedroSantiago\ActivityFeed\Models\FeedItemEntity;
 
 trait HasFeed
 {
@@ -22,7 +22,7 @@ trait HasFeed
     public function feedItems()
     {
         return $this->hasManyThrough(
-            \YourVendor\ActivityFeed\Models\FeedItem::class,
+            \PedroSantiago\ActivityFeed\Models\FeedItem::class,
             FeedItemEntity::class,
             'entity_id', // Foreign key on feed_item_entities
             'id',        // Foreign key on feed_items
@@ -70,7 +70,7 @@ trait HasFeed
     /**
      * Log an activity for this model.
      */
-    public function logActivity(string $action, string $template, ?array $properties = null): \YourVendor\ActivityFeed\Models\FeedItem
+    public function logActivity(string $action, string $template, ?array $properties = null): \PedroSantiago\ActivityFeed\Models\FeedItem
     {
         $builder = $this->createFeedItem()
             ->withAction($action)

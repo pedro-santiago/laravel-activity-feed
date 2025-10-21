@@ -6,7 +6,7 @@ Get up and running with Laravel Activity Feed in 5 minutes.
 
 ```bash
 # Install the package
-composer require yourvendor/laravel-activity-feed
+composer require pedro-santiago/laravel-activity-feed
 
 # Publish config and migrations
 php artisan vendor:publish --tag=feed-config
@@ -22,7 +22,7 @@ php artisan migrate
 
 ```php
 // app/Models/Order.php
-use YourVendor\ActivityFeed\Traits\HasFeed;
+use PedroSantiago\ActivityFeed\Traits\HasFeed;
 
 class Order extends Model
 {
@@ -36,7 +36,7 @@ class Order extends Model
 }
 
 // app/Models/User.php
-use YourVendor\ActivityFeed\Traits\HasFeed;
+use PedroSantiago\ActivityFeed\Traits\HasFeed;
 
 class User extends Model
 {
@@ -54,7 +54,7 @@ class User extends Model
 ### Method 1: Using the Helper Function
 
 ```php
-use function YourVendor\ActivityFeed\feed;
+use function PedroSantiago\ActivityFeed\feed;
 
 // Simple activity
 feed()
@@ -106,7 +106,7 @@ $order->createFeedItem()
 ### In Your Controller
 
 ```php
-use YourVendor\ActivityFeed\Models\FeedItem;
+use PedroSantiago\ActivityFeed\Models\FeedItem;
 
 class OrderController extends Controller
 {

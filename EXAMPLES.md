@@ -10,7 +10,7 @@ Similar to the screenshot you provided, here's how to implement an activity feed
 
 ```php
 // app/Models/PurchaseOrder.php
-use YourVendor\ActivityFeed\Traits\HasFeed;
+use PedroSantiago\ActivityFeed\Traits\HasFeed;
 
 class PurchaseOrder extends Model
 {
@@ -28,7 +28,7 @@ class PurchaseOrder extends Model
 }
 
 // app/Models/User.php
-use YourVendor\ActivityFeed\Traits\HasFeed;
+use PedroSantiago\ActivityFeed\Traits\HasFeed;
 
 class User extends Model
 {
@@ -44,7 +44,7 @@ class User extends Model
 ### Logging Activities
 
 ```php
-use function YourVendor\ActivityFeed\feed;
+use function PedroSantiago\ActivityFeed\feed;
 
 // When a purchase order is created
 feed()

@@ -1,11 +1,11 @@
 <?php
 
-namespace YourVendor\ActivityFeed\Builders;
+namespace PedroSantiago\ActivityFeed\Builders;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
-use YourVendor\ActivityFeed\Models\FeedItem;
-use YourVendor\ActivityFeed\Models\FeedItemEntity;
+use PedroSantiago\ActivityFeed\Models\FeedItem;
+use PedroSantiago\ActivityFeed\Models\FeedItemEntity;
 
 class FeedItemBuilder
 {

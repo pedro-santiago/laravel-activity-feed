@@ -1,12 +1,12 @@
 <?php
 
-namespace YourVendor\ActivityFeed\Models;
+namespace PedroSantiago\ActivityFeed\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
-use YourVendor\ActivityFeed\Renderers\DescriptionRenderer;
+use PedroSantiago\ActivityFeed\Renderers\DescriptionRenderer;
 
 class FeedItem extends Model
 {

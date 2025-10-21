@@ -1,9 +1,9 @@
 <?php
 
-namespace YourVendor\ActivityFeed\Tests;
+namespace PedroSantiago\ActivityFeed\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use YourVendor\ActivityFeed\ActivityFeedServiceProvider;
+use PedroSantiago\ActivityFeed\ActivityFeedServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

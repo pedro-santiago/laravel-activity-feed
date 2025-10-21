@@ -1,10 +1,10 @@
 <?php
 
-namespace YourVendor\ActivityFeed\Renderers;
+namespace PedroSantiago\ActivityFeed\Renderers;
 
 use Illuminate\Database\Eloquent\Model;
-use YourVendor\ActivityFeed\Models\FeedItem;
-use YourVendor\ActivityFeed\Models\FeedItemEntity;
+use PedroSantiago\ActivityFeed\Models\FeedItem;
+use PedroSantiago\ActivityFeed\Models\FeedItemEntity;
 
 class DescriptionRenderer
 {

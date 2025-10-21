@@ -1,9 +1,9 @@
 <?php
 
-namespace YourVendor\ActivityFeed\Tests\Unit;
+namespace PedroSantiago\ActivityFeed\Tests\Unit;
 
-use YourVendor\ActivityFeed\Renderers\DescriptionRenderer;
-use YourVendor\ActivityFeed\Tests\TestCase;
+use PedroSantiago\ActivityFeed\Renderers\DescriptionRenderer;
+use PedroSantiago\ActivityFeed\Tests\TestCase;
 
 class DescriptionRendererTest extends TestCase
 {

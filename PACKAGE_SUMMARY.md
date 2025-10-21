@@ -217,7 +217,7 @@ laravel-activity-feed/
 
 ### Install
 ```bash
-composer require yourvendor/laravel-activity-feed
+composer require pedro-santiago/laravel-activity-feed
 php artisan vendor:publish --tag=feed-config
 php artisan vendor:publish --tag=feed-migrations
 php artisan migrate

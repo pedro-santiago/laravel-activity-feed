@@ -1,9 +1,9 @@
 <?php
 
-namespace YourVendor\ActivityFeed\Commands;
+namespace PedroSantiago\ActivityFeed\Commands;
 
 use Illuminate\Console\Command;
-use YourVendor\ActivityFeed\Models\FeedItem;
+use PedroSantiago\ActivityFeed\Models\FeedItem;
 
 class CleanupFeedItemsCommand extends Command
 {

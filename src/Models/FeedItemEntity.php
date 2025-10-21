@@ -1,6 +1,6 @@
 <?php
 
-namespace YourVendor\ActivityFeed\Models;
+namespace PedroSantiago\ActivityFeed\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

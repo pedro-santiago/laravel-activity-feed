@@ -1,12 +1,12 @@
 <?php
 
-use YourVendor\ActivityFeed\Builders\FeedItemBuilder;
+use PedroSantiago\ActivityFeed\Builders\FeedItemBuilder;
 
 if (!function_exists('feed')) {
     /**
      * Create a new feed item builder instance.
      *
-     * @return \YourVendor\ActivityFeed\Builders\FeedItemBuilder
+     * @return \PedroSantiago\ActivityFeed\Builders\FeedItemBuilder
      */
     function feed(): FeedItemBuilder
     {

@@ -1,10 +1,10 @@
 <?php
 
-namespace YourVendor\ActivityFeed\Tests\Unit;
+namespace PedroSantiago\ActivityFeed\Tests\Unit;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use YourVendor\ActivityFeed\Builders\FeedItemBuilder;
-use YourVendor\ActivityFeed\Tests\TestCase;
+use PedroSantiago\ActivityFeed\Builders\FeedItemBuilder;
+use PedroSantiago\ActivityFeed\Tests\TestCase;
 
 class GroupedChangesTest extends TestCase
 {

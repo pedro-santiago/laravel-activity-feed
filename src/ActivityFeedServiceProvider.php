@@ -1,9 +1,9 @@
 <?php
 
-namespace YourVendor\ActivityFeed;
+namespace PedroSantiago\ActivityFeed;
 
 use Illuminate\Support\ServiceProvider;
-use YourVendor\ActivityFeed\Commands\CleanupFeedItemsCommand;
+use PedroSantiago\ActivityFeed\Commands\CleanupFeedItemsCommand;
 
 class ActivityFeedServiceProvider extends ServiceProvider
 {

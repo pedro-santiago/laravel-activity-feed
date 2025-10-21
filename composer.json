@@ -1,5 +1,5 @@
 {
-    "name": "yourvendor/laravel-activity-feed",
+    "name": "pedro-santiago/laravel-activity-feed",
     "description": "A robust Laravel package for creating activity feeds with dynamic entity resolution and multiple relationships",
     "keywords": [
         "laravel",
@@ -12,8 +12,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Your Name",
-            "email": "your@email.com"
+            "name": "Pedro Santiago",
+            "email": "contato@pedrosantiago.com.br"
         }
     ],
     "require": {
@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "YourVendor\\ActivityFeed\\": "src/"
+            "PedroSantiago\\ActivityFeed\\": "src/"
         },
         "files": [
             "src/helpers.php"
@@ -36,13 +36,13 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "YourVendor\\ActivityFeed\\Tests\\": "tests/"
+            "PedroSantiago\\ActivityFeed\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "YourVendor\\ActivityFeed\\ActivityFeedServiceProvider"
+                "PedroSantiago\\ActivityFeed\\ActivityFeedServiceProvider"
             ]
         }
     },
