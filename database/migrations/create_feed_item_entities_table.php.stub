@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('feed_item_entities', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('feed_item_id');
+            $table->string('entity_type');
+            $table->unsignedBigInteger('entity_id');
+            $table->string('role', 50); // actor, subject, target, mentioned, related
+            $table->timestamp('created_at')->nullable();
+
+            // Foreign key with cascade delete
+            $table->foreign('feed_item_id')
+                  ->references('id')
+                  ->on('feed_items')
+                  ->onDelete('cascade');
+
+            // Composite indexes for fast lookups
+            $table->index(['entity_type', 'entity_id', 'role'], 'feed_entities_type_id_role_index');
+            $table->index(['feed_item_id', 'role'], 'feed_entities_item_role_index');
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('feed_item_entities');
+    }
+};
